@@ -178,8 +178,8 @@ function refreshBackYard(yardId) {
 }
 
 // Initialize
-function init() {
-    loadData();
+async function init() {
+    await loadData();
     renderPalette();
     renderPhotos();
     renderFrontYard();
@@ -770,18 +770,26 @@ function saveData() {
 }
 
 // Load from localStorage
-function loadData() {
+async function loadData() {
     const saved = localStorage.getItem('gardenPlannerData_v3');
     if (saved) {
         const parsed = JSON.parse(saved);
-        gardenData = {
-            ...gardenData,
-            ...parsed
-        };
-        if (gardenData.yard2) {
-            document.getElementById('yard2-cols').value = gardenData.yard2.cols || 8;
-            document.getElementById('yard2-rows').value = gardenData.yard2.rows || 6;
+        gardenData = { ...gardenData, ...parsed };
+    } else {
+        // No local state — try loading default from state.json
+        try {
+            const res = await fetch('state.json');
+            if (res.ok) {
+                const parsed = await res.json();
+                gardenData = { ...gardenData, ...parsed };
+            }
+        } catch (e) {
+            // state.json not present or unreadable — start fresh
         }
+    }
+    if (gardenData.yard2) {
+        document.getElementById('yard2-cols').value = gardenData.yard2.cols || 8;
+        document.getElementById('yard2-rows').value = gardenData.yard2.rows || 6;
     }
 }
 
