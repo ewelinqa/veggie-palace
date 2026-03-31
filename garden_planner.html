@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌿 Garden Planner</title>
+    <link rel="stylesheet" href="garden_planner.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌿 Garden Planner</h1>
+            <p class="subtitle">Click a cell to add plants • Auto-saves to browser</p>
+        </header>
+
+        <div class="main-content">
+            <div class="yards-container">
+                <!-- Multi-select action bar -->
+                <div class="multiselect-bar" id="multiselect-bar" style="display:none;">
+                    <span id="multiselect-count"></span>
+                    <button class="btn" onclick="mergeSelectedCells()">⊞ Remove Division</button>
+                    <button class="btn" onclick="clearSelectedPlants()">🗑️ Clear Plants</button>
+                    <button class="btn btn-secondary" onclick="clearSelection()">✕ Deselect All</button>
+                </div>
+
+                <!-- Front Yard - Realistic Layout -->
+                <div class="yard" id="yard1">
+                    <div class="yard-header">
+                        <h2>🏡 Front Yard</h2>
+                        <div class="yard-info">
+                            📷 Photos 1-7 • 💧 Drip irrigation under foil
+                        </div>
+                    </div>
+
+                    <div class="front-yard-with-calendar">
+                        <!-- Calendar list panel -->
+                        <div class="calendar-list-panel">
+                            <div class="calendar-nav">
+                                <button class="cal-nav-btn" onclick="prevMonth()">‹</button>
+                                <span id="calendar-title"></span>
+                                <button class="cal-nav-btn" onclick="nextMonth()">›</button>
+                            </div>
+                            <div id="calendar-list"></div>
+                            <div class="add-work-inline">
+                                <strong>+ Work Entry</strong>
+                                <input type="date" id="work-date-input">
+                                <select id="work-type-select">
+                                    <option value="weeding">🌿 Weeding</option>
+                                    <option value="watering">💧 Watering</option>
+                                    <option value="pruning">✂️ Pruning</option>
+                                    <option value="fertilizing">🌱 Fertilizing</option>
+                                    <option value="harvesting">🧺 Harvesting</option>
+                                    <option value="planting">🌱 Planting</option>
+                                    <option value="other">🔧 Other</option>
+                                </select>
+                                <input type="text" id="work-notes-input" placeholder="Notes (optional)">
+                                <button class="btn" onclick="addWorkEntryFromPanel()">Add</button>
+                            </div>
+                        </div>
+
+                        <!-- Front yard grid -->
+                        <div class="front-yard-layout">
+                            <div class="paste-bar" id="paste-bar" style="display:none;">
+                                <span id="paste-info"></span>
+                                <button class="btn btn-secondary" onclick="cancelCopy()" style="width:auto; padding: 4px 10px; font-size:0.8em;">✕ Cancel</button>
+                            </div>
+                            <div class="dimension-label">← 35 m (1m + 33m yard + 1m) →</div>
+                            <div class="grid-with-labels">
+                                <div class="col-labels" id="col-labels-top"></div>
+                                <div class="grid-row-container">
+                                    <div class="row-labels" id="row-labels-left"></div>
+                                    <div class="unified-grid" id="front-yard-grid"></div>
+                                    <div class="row-labels" id="row-labels-right"></div>
+                                </div>
+                                <div class="col-labels" id="col-labels-bottom"></div>
+                            </div>
+                            <div class="dimension-label" style="margin-top: 5px;">← 20 m (1m + 18m yard + 1m) →</div>
+                            <div class="irrigation-note" style="text-align: center; margin-top: 10px; font-size: 0.8em; color: #1976d2;">
+                                💧 Drip irrigation under foil • 🟠 Orange = neighbor • Gray = street
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Back Yard -->
+                <div class="yard" id="yard2">
+                    <div class="yard-header">
+                        <h2>🌳 Back Yard</h2>
+                        <div class="simple-grid-controls">
+                            <label>Cols:</label>
+                            <input type="number" id="yard2-cols" value="8" min="2" max="12" onchange="updateSimpleGrid('yard2')">
+                            <label>Rows:</label>
+                            <input type="number" id="yard2-rows" value="6" min="2" max="10" onchange="updateSimpleGrid('yard2')">
+                        </div>
+                    </div>
+                    <div class="garden-grid" id="yard2-grid"></div>
+                </div>
+
+                <!-- Actions -->
+                <div class="actions-bar">
+                    <button class="btn" onclick="saveData()">💾 Save</button>
+                    <button class="btn btn-secondary" onclick="exportData()">📤 Export to File</button>
+                    <button class="btn btn-secondary" onclick="document.getElementById('import-file').click()">📥 Load from File</button>
+                    <input type="file" id="import-file" accept=".json" style="display: none;" onchange="importData(event)">
+                    <button class="btn btn-secondary" onclick="clearAll()">🗑️ Clear All</button>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <!-- Mode & Zone Palette -->
+                <div class="panel">
+                    <h3>🎨 Zone Colors</h3>
+                    <div class="mode-indicator" id="mode-indicator">🌱 Plant Mode</div>
+                    <p style="font-size: 0.7em; color: #666; margin-bottom: 8px;">Click zone to paint cells, or select plant below</p>
+                    <div class="zone-palette">
+                        <div class="zone-btn grass" onclick="selectZone('grass')">🌿 Grass</div>
+                        <div class="zone-btn foil" onclick="selectZone('foil')">⬛ Foil</div>
+                        <div class="zone-btn gravel" onclick="selectZone('gravel')">⚪ Gravel</div>
+                        <div class="zone-btn path" onclick="selectZone('path')">🟤 Path</div>
+                        <div class="zone-btn patio" onclick="selectZone('patio')">⬜ Patio</div>
+                        <div class="zone-btn flowerbed" onclick="selectZone('flowerbed')">🌸 Flowerbed</div>
+                        <div class="zone-btn water" onclick="selectZone('water')">💧 Water</div>
+                        <div class="zone-btn greenhouse" onclick="selectZone('veggie-palace')">🥬 Veggie P.</div>
+                        <div class="zone-btn shed" onclick="selectZone('toolshed')">🔧 Shed</div>
+                        <div class="zone-btn street" onclick="selectZone('street')">🛤️ Street</div>
+                        <div class="zone-btn neighbor" onclick="selectZone('neighbor')">🏘️ Neighbor</div>
+                        <div class="zone-btn disabled" onclick="selectZone('disabled')">🚫 Disabled</div>
+                    </div>
+                    <button class="btn btn-secondary" onclick="clearZoneSelection()" style="font-size: 0.8em;">✖ Clear Selection (Plant Mode)</button>
+                </div>
+
+                <!-- Plant Palette -->
+                <div class="panel">
+                    <h3>🌱 Plant Palette</h3>
+                    <p style="font-size: 0.75em; color: #666; margin-bottom: 8px;">Click to select, then click a cell</p>
+                    <div class="plant-palette" id="palette"></div>
+
+                    <div class="custom-plant">
+                        <input type="text" id="custom-emoji" placeholder="Emoji (e.g. 🌻)">
+                        <input type="text" id="custom-name" placeholder="Plant name">
+                        <select id="custom-type">
+                            <option value="flower">🌸 Flower</option>
+                            <option value="tree">🌳 Tree</option>
+                            <option value="shrub">🌿 Shrub</option>
+                            <option value="vegetable">🥕 Vegetable</option>
+                            <option value="herb">🌿 Herb</option>
+                            <option value="grass">🌾 Grass</option>
+                            <option value="structure">🏠 Structure</option>
+                        </select>
+                        <button class="btn" onclick="addCustomPlant()">Add Custom</button>
+                    </div>
+                </div>
+
+                <!-- Legend -->
+                <div class="panel">
+                    <h3>📋 Legend</h3>
+                    <p style="font-size: 0.65em; color: #888; margin-bottom: 5px;">Zone Colors:</p>
+                    <div class="legend" style="margin-bottom: 8px;">
+                        <div class="legend-item"><div class="legend-color" style="background:#8bc34a"></div>Grass</div>
+                        <div class="legend-item"><div class="legend-color" style="background:#404040"></div>Foil</div>
+                        <div class="legend-item"><div class="legend-color" style="background:#bdbdbd"></div>Gravel</div>
+                        <div class="legend-item"><div class="legend-color" style="background:#a1887f"></div>Path</div>
+                        <div class="legend-item"><div class="legend-color" style="background:#4fc3f7"></div>Water</div>
+                    </div>
+                    <p style="font-size: 0.65em; color: #888; margin-bottom: 5px;">Plant Types:</p>
+                    <div class="legend">
+                        <div class="legend-item"><div class="legend-color" style="background:#e91e63"></div>Flower</div>
+                        <div class="legend-item"><div class="legend-color" style="background:#4caf50"></div>Tree</div>
+                        <div class="legend-item"><div class="legend-color" style="background:#8bc34a"></div>Shrub</div>
+                        <div class="legend-item"><div class="legend-color" style="background:#ff9800"></div>Vegetable</div>
+                        <div class="legend-item"><div class="legend-color" style="background:#9c27b0"></div>Herb</div>
+                    </div>
+                </div>
+
+                <!-- Stats -->
+                <div class="panel">
+                    <h3>📊 Statistics</h3>
+                    <div class="stats">
+                        <div class="stat">
+                            <div class="stat-value" id="total-plants">0</div>
+                            <div class="stat-label">Total Plants</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value" id="plant-types">0</div>
+                            <div class="stat-label">Plant Types</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photos -->
+                <div class="panel">
+                    <h3>📷 Garden Photos</h3>
+                    <div class="photos-grid" id="photos-grid"></div>
+                    <p style="font-size: 0.65em; color: #888; margin-top: 8px;">🟢 Front Yard • 🔵 Back Yard</p>
+                </div>
+
+                <!-- Instructions -->
+                <div class="panel">
+                    <h3>📖 How to Use</h3>
+                    <ul class="instructions">
+                        <li>Select a plant from palette</li>
+                        <li>Click any cell to place it</li>
+                        <li>Click ✕ to remove plant</li>
+                        <li>Click structures to edit</li>
+                        <li>Data auto-saves to browser</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Edit Modal -->
+    <div class="modal" id="edit-modal">
+        <div class="modal-content">
+            <h3>🌱 Edit Plant</h3>
+            <input type="text" id="edit-emoji" placeholder="Emoji">
+            <input type="text" id="edit-name" placeholder="Plant Name">
+            <select id="edit-type">
+                <option value="flower">🌸 Flower</option>
+                <option value="tree">🌳 Tree</option>
+                <option value="shrub">🌿 Shrub</option>
+                <option value="vegetable">🥕 Vegetable</option>
+                <option value="herb">🌿 Herb</option>
+                <option value="grass">🌾 Grass</option>
+                <option value="structure">🏠 Structure</option>
+            </select>
+            <textarea id="edit-notes" placeholder="Notes (optional)" rows="3"></textarea>
+            <label class="modal-date-label">🗓️ Plant Date</label>
+            <input type="date" id="edit-plant-date">
+            <div class="modal-buttons">
+                <button class="btn" onclick="saveEdit()">Save</button>
+                <button class="btn btn-secondary" id="divide-btn" onclick="divideCell()" title="Split into 4 smaller cells">✥ Divide to 4</button>
+                <button class="btn btn-secondary" id="merge-btn" onclick="mergeCell()" title="Remove division and clear quadrants" style="display:none;">⊞ Remove Division</button>
+                <button class="btn btn-secondary" onclick="closeModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Photo Modal -->
+    <div class="modal" id="photo-modal">
+        <div class="modal-content photo-modal">
+            <img id="photo-view" src="" alt="Garden Photo">
+            <button class="btn btn-secondary" style="margin-top: 15px;" onclick="closePhotoModal()">Close</button>
+        </div>
+    </div>
+
+    <script src="garden_planner.js"></script>
+</body>
+</html>

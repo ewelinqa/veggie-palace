@@ -1,0 +1,1162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    color: #2e7d32;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #558b2f;
+    font-size: 1.1em;
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 20px;
+}
+
+@media (max-width: 1000px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+.yards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.yard {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.yard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.yard h2 {
+    color: #33691e;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.yard-info {
+    font-size: 0.85em;
+    color: #666;
+    background: #f5f5f5;
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+/* Front Yard Layout - 33m x 18m as ONE unified grid */
+.front-yard-layout {
+    position: relative;
+    width: 100%;
+    background: #e8e8e8;
+    border-radius: 12px;
+    padding: 15px;
+    overflow-x: auto;
+}
+
+.yard-wrapper {
+    position: relative;
+    margin: 0 auto;
+}
+
+/* Grid with labels wrapper */
+.grid-with-labels {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Column labels (top and bottom) */
+.col-labels {
+    display: grid;
+    grid-template-columns: 28px repeat(35, 40px) 28px;
+    gap: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+}
+
+.col-label {
+    width: 40px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: #666;
+    font-weight: bold;
+}
+
+.col-label-spacer {
+    width: 28px;
+}
+
+/* Row labels container */
+.grid-row-container {
+    display: flex;
+    align-items: stretch;
+}
+
+/* Row labels (left and right) */
+.row-labels {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+.row-label {
+    width: 28px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: #666;
+    font-weight: bold;
+}
+
+/* Single unified grid - 35 cols × 20 rows (with 1m margin) */
+.unified-grid {
+    display: grid;
+    grid-template-columns: repeat(35, 40px);
+    grid-template-rows: repeat(20, 40px);
+    gap: 1px;
+    background: #ccc;
+    padding: 1px;
+    border-radius: 4px;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.unified-grid .grid-cell {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 2px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s;
+    position: relative;
+    font-size: 18px;
+}
+
+.unified-grid .grid-cell:hover {
+    transform: scale(1.15);
+    z-index: 10;
+    box-shadow: 0 0 0 3px #ff5722, 0 4px 12px rgba(0,0,0,0.4);
+    outline: 2px solid #fff;
+}
+
+/* Subdivided cell */
+.unified-grid .grid-cell.subdivided {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1px;
+    padding: 1px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Dark cross lines as background */
+.unified-grid .grid-cell.subdivided::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.3);
+    z-index: 0;
+}
+
+.unified-grid .grid-cell.subdivided .quadrant {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    cursor: pointer;
+    position: relative;
+    background: inherit;
+    transition: all 0.15s;
+    z-index: 1;
+    border-radius: 1px;
+    overflow: hidden;
+}
+
+.unified-grid .grid-cell.subdivided .quadrant.empty {
+    font-size: 14px;
+    color: rgba(0,0,0,0.35);
+    font-weight: bold;
+}
+
+.unified-grid .grid-cell.subdivided .quadrant.empty:hover {
+    color: #4caf50;
+    filter: brightness(1.1);
+}
+
+.unified-grid .grid-cell.subdivided .quadrant:hover {
+    filter: brightness(1.1);
+    z-index: 5;
+    box-shadow: inset 0 0 0 2px #ff5722;
+}
+
+.unified-grid .grid-cell.subdivided .quadrant.has-plant {
+    cursor: pointer;
+}
+
+.unified-grid .grid-cell.subdivided .quadrant.has-plant:hover {
+    filter: brightness(1.1);
+    box-shadow: inset 0 0 0 2px #ff5722;
+}
+
+.unified-grid .grid-cell.subdivided .quadrant .mini-emoji {
+    font-size: 14px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 50%;
+    padding: 1px;
+}
+
+.unified-grid .grid-cell.subdivided .quadrant .mini-edit {
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    font-size: 8px;
+    cursor: pointer;
+    opacity: 0;
+    line-height: 1;
+    padding: 0;
+    z-index: 25;
+}
+
+.unified-grid .grid-cell.subdivided .quadrant .mini-delete {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    background: #ff5252;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    font-size: 8px;
+    cursor: pointer;
+    opacity: 0;
+    line-height: 1;
+    padding: 0;
+    z-index: 25;
+}
+
+.unified-grid .grid-cell.subdivided .quadrant:hover .mini-edit,
+.unified-grid .grid-cell.subdivided .quadrant:hover .mini-delete {
+    opacity: 1;
+}
+
+/* Zone colors - solid fill for entire cell */
+.zone-gravel {
+    background: #bdbdbd !important;
+}
+
+.zone-foil {
+    background: #404040 !important;
+}
+
+.zone-grass {
+    background: #8bc34a !important;
+}
+
+.zone-veggie-palace {
+    background: #90caf9 !important;
+}
+
+.zone-toolshed {
+    background: #607d8b !important;
+}
+
+.zone-stairs {
+    background: #e0e0e0 !important;
+}
+
+.zone-path {
+    background: #a1887f !important;
+}
+
+.zone-water {
+    background: #4fc3f7 !important;
+}
+
+.zone-flowerbed {
+    background: #8d6e63 !important;
+}
+
+.zone-patio {
+    background: #efebe9 !important;
+}
+
+.zone-unknown {
+    background: #f5f5f5 !important;
+}
+
+.zone-neighbor {
+    background: #ffcc80 !important;
+}
+
+.zone-street {
+    background: #78909c !important;
+}
+
+.zone-disabled {
+    background: repeating-linear-gradient(
+        45deg,
+        #e0e0e0,
+        #e0e0e0 4px,
+        #bdbdbd 4px,
+        #bdbdbd 8px
+    ) !important;
+    opacity: 0.6;
+    cursor: not-allowed !important;
+}
+
+.zone-disabled:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Cell with plant - keep zone color visible */
+.unified-grid .grid-cell.has-plant {
+    border: 2px solid;
+}
+
+.unified-grid .grid-cell.has-plant .plant-emoji {
+    background: rgba(255,255,255,0.85);
+    border-radius: 50%;
+    padding: 1px;
+}
+
+.unified-grid .grid-cell .plant-emoji {
+    font-size: 24px;
+    line-height: 1;
+}
+
+/* Shared cell icon buttons (edit, delete, copy) */
+.unified-grid .grid-cell .edit-btn,
+.unified-grid .grid-cell .delete-btn,
+.unified-grid .grid-cell .copy-btn {
+    position: absolute;
+    background: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    font-size: 8px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s;
+    line-height: 1;
+    padding: 0;
+}
+
+.unified-grid .grid-cell .edit-btn  { top: -4px; left: -4px; background: #2196f3; }
+.unified-grid .grid-cell .delete-btn { top: -4px; right: -4px; background: #ff5252; }
+.unified-grid .grid-cell .copy-btn  { bottom: -4px; left: -4px; background: #ff9800; }
+
+.unified-grid .grid-cell:hover .delete-btn,
+.unified-grid .grid-cell:hover .edit-btn,
+.unified-grid .grid-cell:hover .copy-btn {
+    opacity: 1;
+}
+
+/* Paste mode bar */
+.paste-bar {
+    background: #e3f2fd;
+    border: 2px solid #2196f3;
+    border-radius: 10px;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.paste-bar span {
+    flex: 1;
+    font-size: 0.85em;
+    font-weight: bold;
+    color: #1565c0;
+}
+
+/* Dimension labels */
+.dimension-label {
+    font-size: 0.75em;
+    color: #666;
+    font-weight: bold;
+    text-align: center;
+    margin: 5px 0;
+}
+
+/* Zone Palette */
+.zone-palette {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.zone-btn {
+    padding: 8px 4px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 0.7em;
+    transition: all 0.2s;
+}
+
+.zone-btn:hover {
+    transform: scale(1.05);
+}
+
+.zone-btn.selected {
+    border-color: #333;
+    box-shadow: 0 0 0 2px #666;
+}
+
+.zone-btn.grass { background: #8bc34a; color: white; }
+.zone-btn.foil { background: #404040; color: white; }
+.zone-btn.gravel { background: #bdbdbd; color: #333; }
+.zone-btn.path { background: #a1887f; color: white; }
+.zone-btn.water { background: #4fc3f7; color: white; }
+.zone-btn.flowerbed { background: #8d6e63; color: white; }
+.zone-btn.patio { background: #efebe9; color: #333; }
+.zone-btn.greenhouse { background: #90caf9; color: #1565c0; }
+.zone-btn.shed { background: #607d8b; color: white; }
+.zone-btn.street { background: #78909c; color: white; }
+.zone-btn.neighbor { background: #ffcc80; color: #333; }
+.zone-btn.disabled { background: repeating-linear-gradient(45deg, #e0e0e0, #e0e0e0 4px, #bdbdbd 4px, #bdbdbd 8px); color: #666; }
+
+/* Mode indicator */
+.mode-indicator {
+    padding: 8px;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.mode-indicator.plant-mode {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.mode-indicator.zone-mode {
+    background: #fff3e0;
+    color: #e65100;
+}
+
+/* Lawn area removed - now part of unified grid */
+
+/* Structures positioning removed - now part of unified grid */
+
+/* Generic grid styling */
+.garden-grid {
+    display: grid;
+    gap: 3px;
+    background: #e0e0e0;
+    padding: 3px;
+    border-radius: 8px;
+    min-height: 200px;
+}
+
+.grid-cell {
+    background: rgba(255,255,255,0.3);
+    border: 1px dashed rgba(255,255,255,0.5);
+    border-radius: 4px;
+    min-height: 25px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    padding: 2px;
+    position: relative;
+    font-size: 0.7em;
+}
+
+.grid-cell:hover {
+    background: rgba(255,255,255,0.6);
+    border-color: #81c784;
+    transform: scale(1.05);
+}
+
+
+
+.grid-cell.has-plant {
+    border-style: solid;
+    background: rgba(255,255,255,0.9);
+}
+
+.grid-cell .plant-emoji {
+    font-size: 1.2em;
+}
+
+.grid-cell .plant-name {
+    font-size: 0.55em;
+    color: #333;
+    text-align: center;
+    margin-top: 1px;
+    word-break: break-word;
+    line-height: 1.1;
+}
+
+.grid-cell .delete-btn {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    background: #ff5252;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 14px;
+    height: 14px;
+    font-size: 9px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s;
+    line-height: 1;
+}
+
+.grid-cell:hover .delete-btn {
+    opacity: 1;
+}
+
+/* Plant type colors */
+.type-flower { border-color: #e91e63 !important; }
+.type-tree { border-color: #4caf50 !important; }
+.type-shrub { border-color: #8bc34a !important; }
+.type-vegetable { border-color: #ff9800 !important; }
+.type-herb { border-color: #9c27b0 !important; }
+.type-grass { border-color: #cddc39 !important; }
+.type-structure { border-color: #795548 !important; }
+
+/* Sidebar */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.panel {
+    background: white;
+    border-radius: 16px;
+    padding: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.panel h3 {
+    color: #33691e;
+    margin-bottom: 12px;
+    font-size: 1em;
+    border-bottom: 2px solid #c8e6c9;
+    padding-bottom: 6px;
+}
+
+.plant-palette {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+}
+
+.palette-item {
+    background: #f5f5f5;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 5px;
+    text-align: center;
+    cursor: grab;
+    transition: all 0.2s;
+}
+
+.palette-item:hover {
+    background: #e8f5e9;
+    transform: scale(1.05);
+}
+
+.palette-item.selected {
+    border-color: #4caf50;
+    background: #e8f5e9;
+    box-shadow: 0 0 0 2px #81c784;
+}
+
+.palette-item .emoji {
+    font-size: 1.3em;
+    display: block;
+}
+
+.palette-item .label {
+    font-size: 0.55em;
+    color: #666;
+    margin-top: 1px;
+}
+
+.palette-item .palette-delete-btn {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #ff5252;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 14px;
+    height: 14px;
+    font-size: 10px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s;
+    line-height: 1;
+    padding: 0;
+}
+
+.palette-item:hover .palette-delete-btn {
+    opacity: 1;
+}
+
+.palette-item.custom {
+    position: relative;
+    border-color: #81c784;
+}
+
+.custom-plant {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.custom-plant input, .custom-plant select {
+    width: 100%;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 6px;
+    font-size: 0.9em;
+}
+
+.btn {
+    background: #4caf50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.85em;
+    transition: background 0.2s;
+    width: 100%;
+}
+
+.btn:hover { background: #388e3c; }
+.btn-secondary { background: #78909c; }
+.btn-secondary:hover { background: #546e7a; }
+
+/* Photos panel */
+.photos-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.photo-thumb {
+    aspect-ratio: 1;
+    background: #e0e0e0;
+    border-radius: 4px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.2s;
+    position: relative;
+}
+
+.photo-thumb:hover { transform: scale(1.08); }
+.photo-thumb img { width: 100%; height: 100%; object-fit: cover; }
+
+.photo-thumb.front-yard::after {
+    content: 'F';
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    background: #4caf50;
+    color: white;
+    font-size: 0.5em;
+    padding: 1px 3px;
+    border-radius: 2px;
+}
+
+.photo-thumb.back-yard::after {
+    content: 'B';
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    background: #2196f3;
+    color: white;
+    font-size: 0.5em;
+    padding: 1px 3px;
+    border-radius: 2px;
+}
+
+/* Legend */
+.legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.7em;
+}
+
+.legend-color {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+}
+
+/* Stats */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+.stat {
+    text-align: center;
+    padding: 8px;
+    background: #f5f5f5;
+    border-radius: 6px;
+}
+
+.stat-value {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #2e7d32;
+}
+
+.stat-label {
+    font-size: 0.65em;
+    color: #666;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active { display: flex; }
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+    max-width: 400px;
+    width: 90%;
+}
+
+.modal-content h3 {
+    margin-bottom: 15px;
+    color: #2e7d32;
+}
+
+.modal-content input,
+.modal-content select,
+.modal-content textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 12px;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.modal-buttons .btn { flex: 1; }
+
+/* Actions bar */
+.actions-bar {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.actions-bar .btn { flex: 1; }
+
+/* Photo viewer modal */
+.photo-modal img {
+    max-width: 100%;
+    max-height: 70vh;
+    border-radius: 8px;
+}
+
+/* Instructions */
+.instructions {
+    font-size: 0.8em;
+    color: #666;
+    line-height: 1.4;
+}
+
+.instructions li { margin-bottom: 4px; }
+
+/* Cell highlight (from calendar click) */
+@keyframes cell-pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(33, 150, 243, 0.8); }
+    60%  { box-shadow: 0 0 0 8px rgba(33, 150, 243, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(33, 150, 243, 0); }
+}
+
+.cell-highlighted {
+    outline: 3px solid #2196f3 !important;
+    outline-offset: -2px;
+    z-index: 15;
+    animation: cell-pulse 0.7s ease 3;
+}
+
+/* Multi-select */
+.cell-selected {
+    outline: 3px solid #ff9800 !important;
+    outline-offset: -2px;
+    z-index: 5;
+}
+
+.multiselect-bar {
+    background: #fff3e0;
+    border: 2px solid #ff9800;
+    border-radius: 12px;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.multiselect-bar span {
+    font-weight: bold;
+    color: #e65100;
+    flex: 1;
+    min-width: 120px;
+}
+
+.multiselect-bar .btn {
+    width: auto;
+    flex: 0;
+    white-space: nowrap;
+}
+
+/* Modal date label */
+.modal-date-label {
+    display: block;
+    font-size: 0.85em;
+    color: #666;
+    margin-bottom: 4px;
+}
+
+/* Calendar list panel (left of front yard) */
+.front-yard-with-calendar {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.calendar-list-panel {
+    flex: 0 0 210px;
+    min-width: 190px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    background: #fafafa;
+    overflow: hidden;
+    align-self: stretch;
+}
+
+.calendar-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 10px;
+    border-bottom: 1px solid #e0e0e0;
+    background: white;
+}
+
+.cal-nav-btn {
+    background: #e8f5e9;
+    border: 1px solid #c8e6c9;
+    border-radius: 6px;
+    color: #2e7d32;
+    font-size: 1.1em;
+    cursor: pointer;
+    width: 26px;
+    height: 26px;
+    line-height: 1;
+    transition: background 0.15s;
+}
+
+.cal-nav-btn:hover { background: #c8e6c9; }
+
+#calendar-title {
+    font-size: 0.85em;
+    font-weight: bold;
+    color: #33691e;
+    text-align: center;
+}
+
+#calendar-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 8px;
+}
+
+.cal-hint {
+    color: #aaa;
+    font-size: 0.8em;
+    text-align: center;
+    padding: 8px 0;
+}
+
+.cal-list-day {
+    margin-bottom: 6px;
+}
+
+.cal-list-day summary {
+    list-style: none;
+}
+
+.cal-list-day summary::-webkit-details-marker {
+    display: none;
+}
+
+.cal-list-date {
+    font-size: 0.72em;
+    font-weight: bold;
+    color: #777;
+    padding: 4px 4px 4px 0;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 3px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px;
+    user-select: none;
+}
+
+.cal-list-date::before {
+    content: '▶';
+    font-size: 0.7em;
+    color: #bbb;
+    transition: transform 0.15s;
+    flex-shrink: 0;
+}
+
+details[open] .cal-list-date::before {
+    transform: rotate(90deg);
+}
+
+.cal-list-date.is-today { color: #2e7d32; }
+
+.cal-list-count {
+    font-size: 0.85em;
+    font-weight: normal;
+    color: #aaa;
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+/* Grouped plants within a day */
+.cal-plant-group {
+    margin-bottom: 2px;
+}
+
+.cal-plant-group summary {
+    list-style: none;
+}
+
+.cal-plant-group summary::-webkit-details-marker {
+    display: none;
+}
+
+.cal-plant-group-header {
+    font-size: 0.78em;
+    padding: 3px 7px 3px 14px;
+    border-radius: 5px;
+    background: #e8f5e9;
+    color: #1b5e20;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    user-select: none;
+    position: relative;
+}
+
+.cal-plant-group-header::before {
+    content: '▶';
+    font-size: 0.65em;
+    color: #81c784;
+    position: absolute;
+    left: 4px;
+    transition: transform 0.15s;
+}
+
+.cal-plant-group[open] .cal-plant-group-header::before {
+    transform: rotate(90deg);
+}
+
+.cal-plant-item {
+    margin-left: 10px;
+}
+
+.cal-list-event {
+    font-size: 0.78em;
+    padding: 4px 22px 4px 7px;
+    border-radius: 5px;
+    margin-bottom: 3px;
+    position: relative;
+}
+
+.planting-event { background: #e8f5e9; color: #1b5e20; }
+.work-event { background: #fff3e0; color: #e65100; }
+
+.event-yard {
+    font-size: 0.82em;
+    opacity: 0.65;
+    margin-left: 3px;
+}
+
+.event-delete-btn {
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #ccc;
+    font-size: 0.8em;
+    line-height: 1;
+    padding: 1px;
+}
+
+.event-delete-btn:hover { color: #f44336; }
+
+.add-work-inline {
+    border-top: 1px solid #e0e0e0;
+    padding: 9px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.add-work-inline strong {
+    font-size: 0.75em;
+    color: #666;
+}
+
+.add-work-inline input[type="date"],
+.add-work-inline select,
+.add-work-inline input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.78em;
+    box-sizing: border-box;
+}
+
+.add-work-inline .btn {
+    font-size: 0.78em;
+    padding: 5px;
+}
+
+/* Back yard simple grid */
+.simple-grid-controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.simple-grid-controls label {
+    font-size: 0.85em;
+    color: #666;
+}
+
+.simple-grid-controls input {
+    width: 50px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
