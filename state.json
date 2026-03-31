@@ -5,691 +5,899 @@
         "emoji": "🌱",
         "name": "forsythia",
         "type": "shrub",
-        "notes": ""
-      },
-      "1-21": {
-        "emoji": "🪻",
-        "name": "Lavender",
-        "type": "flower",
-        "notes": ""
-      },
-      "1-22": {
-        "emoji": "🪻",
-        "name": "Lavender",
-        "type": "flower",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "2-21": {
-        "emoji": "🪻",
-        "name": "Lavender",
-        "type": "flower",
-        "notes": ""
+        "subdivided": true,
+        "quadrants": [
+          {
+            "emoji": "🪻",
+            "name": "Lavender",
+            "type": "flower",
+            "plantDate": "2024-07-31"
+          },
+          {
+            "emoji": "🪻",
+            "name": "Lavender",
+            "type": "flower",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          },
+          {},
+          {
+            "emoji": "🪻",
+            "name": "Lavender",
+            "type": "flower",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          }
+        ]
       },
       "3-21": {
-        "emoji": "🪻",
-        "name": "Lavender",
-        "type": "flower",
-        "notes": ""
+        "subdivided": true,
+        "quadrants": [
+          {
+            "emoji": "🪻",
+            "name": "Lavender",
+            "type": "flower",
+            "plantDate": "2024-07-31"
+          },
+          {},
+          {},
+          {}
+        ]
       },
       "16-28": {
         "emoji": "🌺",
         "name": "Hibiscus",
         "type": "flower",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "18-30": {
         "emoji": "🦋",
         "name": "Butterfly bush",
         "type": "shrub",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "18-24": {
         "emoji": "🦋",
         "name": "Butterfly bush",
         "type": "shrub",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "18-18": {
         "emoji": "🦋",
         "name": "Butterfly bush",
         "type": "shrub",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "18-12": {
         "emoji": "🦋",
         "name": "Butterfly bush",
         "type": "shrub",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "18-6": {
         "emoji": "🦋",
         "name": "Butterfly bush",
         "type": "shrub",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "18-27": {
         "emoji": "🌳",
         "name": " Cherry plum",
         "type": "tree",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "18-21": {
         "emoji": "🌳",
         "name": "Cherry plum",
         "type": "tree",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "18-15": {
         "emoji": "🌳",
         "name": "Cherry plum",
         "type": "tree",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "18-9": {
         "emoji": "🌳",
         "name": "Cherry plum",
         "type": "tree",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "16-30": {
         "emoji": "🌾",
         "name": "Grass",
         "type": "grass",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "11-32": {
         "emoji": "🌾",
         "name": "Grass",
         "type": "grass",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "9-32": {
         "emoji": "🌾",
         "name": "Grass",
         "type": "grass",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "7-32": {
         "emoji": "🌾",
         "name": "Grass",
         "type": "grass",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "5-32": {
         "emoji": "🌾",
         "name": "Grass",
         "type": "grass",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "2-26": {
         "emoji": "🌾",
         "name": "Grass",
         "type": "grass",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "2-28": {
         "emoji": "🌾",
         "name": "Grass",
         "type": "grass",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "2-30": {
         "emoji": "🌾",
         "name": "Grass",
         "type": "grass",
-        "notes": ""
-      },
-      "2-32": {
-        "emoji": "🌾",
-        "name": "Grass",
-        "type": "grass",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "2-16": {
         "emoji": "🌾",
         "name": "Grass",
         "type": "grass",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "2-14": {
         "emoji": "🌾",
         "name": "Grass",
         "type": "grass",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "2-12": {
         "emoji": "🌾",
         "name": "Grass",
         "type": "grass",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "2-10": {
         "emoji": "🌾",
         "name": "Grass",
         "type": "grass",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "2-8": {
         "emoji": "🌾",
         "name": "Grass",
         "type": "grass",
-        "notes": ""
-      },
-      "1-5": {
-        "emoji": "🌾",
-        "name": "Grass",
-        "type": "grass",
-        "notes": ""
-      },
-      "1-4": {
-        "emoji": "🌾",
-        "name": "Grass",
-        "type": "grass",
-        "notes": ""
-      },
-      "2-4": {
-        "emoji": "🌾",
-        "name": "Grass",
-        "type": "grass",
-        "notes": ""
-      },
-      "3-4": {
-        "emoji": "🌾",
-        "name": "Grass",
-        "type": "grass",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "1-24": {
-        "emoji": "🌿",
-        "name": "Juniper",
-        "type": "shrub",
-        "notes": "",
-        "plantDate": "2024-07-31"
+        "subdivided": true,
+        "quadrants": [
+          {},
+          {},
+          {
+            "emoji": "🌿",
+            "name": "Juniper",
+            "type": "shrub",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          },
+          {}
+        ]
       },
       "1-25": {
-        "emoji": "🌿",
-        "name": "Juniper",
-        "type": "shrub",
-        "notes": "",
-        "plantDate": "2024-07-31"
+        "subdivided": true,
+        "quadrants": [
+          {},
+          {},
+          {
+            "emoji": "🌿",
+            "name": "Juniper",
+            "type": "shrub",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          },
+          {}
+        ]
       },
       "1-26": {
-        "emoji": "🌿",
-        "name": "Juniper",
-        "type": "shrub",
-        "notes": "",
-        "plantDate": "2024-07-31"
+        "subdivided": true,
+        "quadrants": [
+          {},
+          {},
+          {
+            "emoji": "🌿",
+            "name": "Juniper",
+            "type": "shrub",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          },
+          {}
+        ]
       },
       "1-27": {
-        "emoji": "🌿",
-        "name": "Juniper",
-        "type": "shrub",
-        "notes": "",
-        "plantDate": "2024-07-31"
+        "subdivided": true,
+        "quadrants": [
+          {},
+          {},
+          {
+            "emoji": "🌿",
+            "name": "Juniper",
+            "type": "shrub",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          },
+          {}
+        ]
       },
       "1-28": {
-        "emoji": "🌿",
-        "name": "Juniper",
-        "type": "shrub",
-        "notes": "",
-        "plantDate": "2024-07-31"
+        "subdivided": true,
+        "quadrants": [
+          {},
+          {},
+          {
+            "emoji": "🌿",
+            "name": "Juniper",
+            "type": "shrub",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          },
+          {}
+        ]
       },
       "1-29": {
-        "emoji": "🌿",
-        "name": "Juniper",
-        "type": "shrub",
-        "notes": "",
-        "plantDate": "2024-07-31"
+        "subdivided": true,
+        "quadrants": [
+          {},
+          {},
+          {
+            "emoji": "🌿",
+            "name": "Juniper",
+            "type": "shrub",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          },
+          {}
+        ]
       },
       "1-30": {
-        "emoji": "🌿",
-        "name": "Juniper",
-        "type": "shrub",
-        "notes": "",
-        "plantDate": "2024-07-31"
+        "subdivided": true,
+        "quadrants": [
+          {},
+          {},
+          {
+            "emoji": "🌿",
+            "name": "Juniper",
+            "type": "shrub",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          },
+          {}
+        ]
       },
       "1-31": {
-        "emoji": "🌿",
-        "name": "Juniper",
-        "type": "shrub",
-        "notes": "",
-        "plantDate": "2024-07-31"
+        "subdivided": true,
+        "quadrants": [
+          {},
+          {},
+          {
+            "emoji": "🌿",
+            "name": "Juniper",
+            "type": "shrub",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          },
+          {}
+        ]
       },
       "1-32": {
-        "emoji": "🌿",
-        "name": "Juniper",
-        "type": "shrub",
-        "notes": "",
-        "plantDate": "2024-07-31"
-      },
-      "1-15": {
-        "emoji": "🌿",
-        "name": "Juniper",
-        "type": "shrub",
-        "notes": "",
-        "plantDate": "2024-07-31"
-      },
-      "1-14": {
-        "emoji": "🌿",
-        "name": "Juniper",
-        "type": "shrub",
-        "notes": "",
-        "plantDate": "2024-07-31"
-      },
-      "1-13": {
-        "emoji": "🌿",
-        "name": "Juniper",
-        "type": "shrub",
-        "notes": "",
-        "plantDate": "2024-07-31"
-      },
-      "1-12": {
-        "emoji": "🌿",
-        "name": "Juniper",
-        "type": "shrub",
-        "notes": "",
-        "plantDate": "2024-07-31"
-      },
-      "1-11": {
-        "emoji": "🌿",
-        "name": "Juniper",
-        "type": "shrub",
-        "notes": "",
-        "plantDate": "2024-07-31"
-      },
-      "1-10": {
-        "emoji": "🌿",
-        "name": "Juniper",
-        "type": "shrub",
-        "notes": "",
-        "plantDate": "2024-07-31"
-      },
-      "1-9": {
-        "emoji": "🌿",
-        "name": "Juniper",
-        "type": "shrub",
-        "notes": "",
-        "plantDate": "2024-07-31"
-      },
-      "1-8": {
-        "emoji": "🌿",
-        "name": "Juniper",
-        "type": "shrub",
-        "notes": "",
-        "plantDate": "2024-07-31"
-      },
-      "1-7": {
-        "emoji": "🌿",
-        "name": "Juniper",
-        "type": "shrub",
-        "notes": "",
-        "plantDate": "2024-07-31"
+        "subdivided": true,
+        "quadrants": [
+          {},
+          {},
+          {
+            "emoji": "🌿",
+            "name": "Juniper",
+            "type": "shrub",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          },
+          {}
+        ]
       },
       "14-33": {
         "emoji": "🦋",
         "name": "Butterfly bush",
         "type": "shrub",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "11-33": {
         "emoji": "🦋",
         "name": "Butterfly bush",
         "type": "shrub",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "8-33": {
         "emoji": "🦋",
         "name": "Butterfly bush",
         "type": "shrub",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "5-33": {
         "emoji": "🦋",
         "name": "Butterfly bush",
         "type": "shrub",
-        "notes": ""
-      },
-      "2-33": {
-        "emoji": "🦋",
-        "name": "Butterfly bush",
-        "type": "shrub",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "3-18": {
-        "emoji": "🌿",
-        "name": "Yew",
-        "type": "shrub",
-        "notes": ""
+        "subdivided": true,
+        "quadrants": [
+          {
+            "emoji": "🌿",
+            "name": "Yew",
+            "type": "shrub",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          },
+          {},
+          {},
+          {
+            "emoji": "🌿",
+            "name": "Yew",
+            "type": "shrub",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          }
+        ]
       },
       "2-19": {
-        "emoji": "🌸",
-        "name": "Echinacea",
-        "type": "flower",
-        "notes": "",
-        "plantDate": "2024-07-31"
+        "subdivided": true,
+        "quadrants": [
+          {},
+          {
+            "emoji": "🌸",
+            "name": "Echinacea",
+            "type": "flower",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          },
+          {
+            "emoji": "🌸",
+            "name": "Echinacea",
+            "type": "flower",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          },
+          {}
+        ]
       },
       "3-19": {
-        "emoji": "🌸",
-        "name": "Echinacea",
-        "type": "flower",
-        "notes": ""
+        "subdivided": true,
+        "quadrants": [
+          {},
+          {
+            "emoji": "🌸",
+            "name": "Echinacea",
+            "type": "flower",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          },
+          {},
+          {}
+        ]
       },
       "1-18": {
-        "emoji": "🌸",
-        "name": "Echinacea",
-        "type": "flower",
-        "notes": "",
-        "plantDate": "2024-07-31"
+        "subdivided": true,
+        "quadrants": [
+          {},
+          {},
+          {
+            "emoji": "🌸",
+            "name": "Echinacea",
+            "type": "flower",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          },
+          {
+            "emoji": "🌸",
+            "name": "Echinacea",
+            "type": "flower",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          }
+        ]
       },
       "2-18": {
-        "emoji": "🌿",
-        "name": "Yew",
-        "type": "shrub",
-        "notes": ""
+        "subdivided": true,
+        "quadrants": [
+          {
+            "emoji": "🌿",
+            "name": "Yew",
+            "type": "shrub",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          },
+          {},
+          {
+            "emoji": "🌼",
+            "name": "Black-eyed Susan",
+            "type": "flower",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          },
+          {
+            "emoji": "🌿",
+            "name": "Yew",
+            "type": "shrub",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          }
+        ]
       },
       "2-22": {
-        "emoji": "🌿",
-        "name": "Yew",
-        "type": "shrub",
-        "notes": ""
+        "subdivided": true,
+        "quadrants": [
+          {
+            "emoji": "🌿",
+            "name": "Yew",
+            "type": "shrub",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          },
+          {},
+          {},
+          {
+            "emoji": "🌿",
+            "name": "Yew",
+            "type": "shrub",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          }
+        ]
       },
       "3-22": {
-        "emoji": "🌿",
-        "name": "Yew",
-        "type": "shrub",
-        "notes": ""
+        "subdivided": true,
+        "quadrants": [
+          {
+            "emoji": "🌿",
+            "name": "Yew",
+            "type": "shrub",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          },
+          {},
+          {},
+          {
+            "emoji": "🌿",
+            "name": "Yew",
+            "type": "shrub",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          }
+        ]
       },
       "3-17": {
-        "emoji": "🌼",
-        "name": "Black-eyed Susan",
-        "type": "flower",
-        "notes": ""
+        "subdivided": true,
+        "quadrants": [
+          {
+            "emoji": "🌼",
+            "name": "Black-eyed Susan",
+            "type": "flower",
+            "plantDate": "2024-07-31"
+          },
+          {},
+          {},
+          {
+            "emoji": "🌼",
+            "name": "Black-eyed Susan",
+            "type": "flower",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          }
+        ]
       },
       "2-23": {
         "emoji": "🌸",
         "name": "Verbena",
         "type": "flower",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "3-23": {
         "emoji": "🌸",
         "name": "Verbena",
         "type": "flower",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "3-24": {
-        "emoji": "🌸",
-        "name": "Verbena",
-        "type": "flower",
-        "notes": ""
+        "subdivided": true,
+        "quadrants": [
+          {
+            "emoji": "🌸",
+            "name": "Verbena",
+            "type": "flower",
+            "plantDate": "2024-07-31"
+          },
+          {},
+          {},
+          {
+            "emoji": "🌸",
+            "name": "Verbena",
+            "type": "flower",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          }
+        ]
       },
       "2-24": {
         "emoji": "🌸",
         "name": "Verbena",
         "type": "flower",
-        "notes": ""
-      },
-      "10-3": {
-        "emoji": "🌾",
-        "name": "Grass",
-        "type": "grass",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "12-2": {
         "emoji": "🌳",
         "name": "Brech",
         "type": "tree",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "9-3": {
         "emoji": "🌳",
         "name": "Brech",
         "type": "tree",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "6-2": {
         "emoji": "🌳",
         "name": "Brech",
         "type": "tree",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "14-26": {
         "emoji": "🌿",
         "name": "Shrub",
         "type": "shrub",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "14-25": {
         "emoji": "🌿",
         "name": "Shrub",
         "type": "shrub",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "14-24": {
         "emoji": "🌿",
         "name": "Shrub",
         "type": "shrub",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "14-23": {
         "emoji": "🌿",
         "name": "Shrub",
         "type": "shrub",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "14-21": {
         "emoji": "🌳",
         "name": "Tree",
         "type": "tree",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "14-19": {
         "emoji": "🌳",
         "name": "Tree",
         "type": "tree",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "14-17": {
         "emoji": "🌳",
         "name": "Tree",
         "type": "tree",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "14-15": {
         "emoji": "🌳",
         "name": "Tree",
         "type": "tree",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "14-13": {
         "emoji": "🌳",
         "name": "Tree",
         "type": "tree",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "14-11": {
         "emoji": "🌳",
         "name": "Tree",
         "type": "tree",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "14-9": {
         "emoji": "🌳",
         "name": "Tree",
         "type": "tree",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "14-7": {
         "emoji": "🌳",
         "name": "Tree",
         "type": "tree",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "12-18": {
         "emoji": "🌳",
         "name": "Tree",
         "type": "tree",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "12-16": {
         "emoji": "🌳",
         "name": "Tree",
         "type": "tree",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "12-14": {
         "emoji": "🌳",
         "name": "Tree",
         "type": "tree",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "12-12": {
         "emoji": "🌳",
         "name": "Tree",
         "type": "tree",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "12-10": {
         "emoji": "🌳",
         "name": "Tree",
         "type": "tree",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "12-28": {
         "emoji": "🥬",
         "name": "Lettuce",
         "type": "vegetable",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "17-28": {
         "emoji": "💮",
         "name": "Hydrangea",
         "type": "shrub",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "17-26": {
         "emoji": "💮",
         "name": "Hydrangea",
         "type": "shrub",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "17-22": {
         "emoji": "💮",
         "name": "Hydrangea",
         "type": "shrub",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "17-20": {
         "emoji": "💮",
         "name": "Hydrangea",
         "type": "shrub",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "17-16": {
         "emoji": "💮",
         "name": "Hydrangea",
         "type": "shrub",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "17-14": {
         "emoji": "💮",
         "name": "Hydrangea",
         "type": "shrub",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "17-10": {
         "emoji": "💮",
         "name": "Hydrangea",
         "type": "shrub",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "17-8": {
         "emoji": "💮",
         "name": "Hydrangea",
         "type": "shrub",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "2-9": {
-        "emoji": "🦋",
-        "name": "Butterfly bush",
-        "type": "shrub",
-        "notes": ""
+        "subdivided": true,
+        "quadrants": [
+          {},
+          {
+            "emoji": "🌳",
+            "name": "Shumard Oak",
+            "type": "tree",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          },
+          {
+            "emoji": "🦋",
+            "name": "Butterfly bush",
+            "type": "shrub",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          },
+          {}
+        ]
       },
       "2-11": {
         "emoji": "🦋",
         "name": "Butterfly bush",
         "type": "shrub",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "2-13": {
         "emoji": "🦋",
         "name": "Butterfly bush",
         "type": "shrub",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "2-15": {
-        "emoji": "🦋",
-        "name": "Butterfly bush",
-        "type": "shrub",
-        "notes": ""
+        "subdivided": true,
+        "quadrants": [
+          {},
+          {
+            "emoji": "🌳",
+            "name": "Shumard Oak",
+            "type": "tree",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          },
+          {
+            "emoji": "🦋",
+            "name": "Butterfly bush",
+            "type": "shrub",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          },
+          {}
+        ]
       },
       "2-7": {
         "emoji": "🦋",
         "name": "Butterfly bush",
         "type": "shrub",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "2-6": {
         "emoji": "💮",
         "name": "Hydrangea",
         "type": "shrub",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "17-6": {
         "emoji": "🌳",
         "name": "Magnolia",
         "type": "tree",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "17-29": {
         "emoji": "🌳",
         "name": "Plant",
         "type": "tree",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "3-16": {
         "emoji": "💮",
         "name": "Hydrangea",
         "type": "shrub",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "3-14": {
         "emoji": "💮",
         "name": "Hydrangea",
         "type": "shrub",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "3-12": {
         "emoji": "💮",
         "name": "Hydrangea",
         "type": "shrub",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "3-10": {
         "emoji": "💮",
         "name": "Hydrangea",
         "type": "shrub",
-        "notes": ""
+        "notes": "",
+        "plantDate": "2024-07-31"
       },
       "3-8": {
         "emoji": "💮",
         "name": "Hydrangea",
-        "type": "shrub",
-        "notes": ""
-      },
-      "1-16": {
-        "emoji": "🌿",
-        "name": "Juniper",
         "type": "shrub",
         "notes": "",
         "plantDate": "2024-07-31"
@@ -714,11 +922,515 @@
         ]
       },
       "2-17": {
-        "emoji": "🌼",
-        "name": "Black-eyed Susan",
-        "type": "flower",
+        "subdivided": true,
+        "quadrants": [
+          {
+            "emoji": "🌼",
+            "name": "Black-eyed Susan",
+            "type": "flower",
+            "plantDate": "2024-07-31"
+          },
+          {},
+          {},
+          {
+            "emoji": "🌼",
+            "name": "Black-eyed Susan",
+            "type": "flower",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          }
+        ]
+      },
+      "1-7": {
+        "subdivided": true,
+        "quadrants": [
+          {},
+          {},
+          {
+            "emoji": "🌿",
+            "name": "Juniper",
+            "type": "shrub",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          },
+          {}
+        ]
+      },
+      "1-8": {
+        "subdivided": true,
+        "quadrants": [
+          {},
+          {},
+          {
+            "emoji": "🌿",
+            "name": "Juniper",
+            "type": "shrub",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          },
+          {}
+        ]
+      },
+      "1-9": {
+        "subdivided": true,
+        "quadrants": [
+          {},
+          {},
+          {
+            "emoji": "🌿",
+            "name": "Juniper",
+            "type": "shrub",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          },
+          {}
+        ]
+      },
+      "1-10": {
+        "subdivided": true,
+        "quadrants": [
+          {},
+          {},
+          {
+            "emoji": "🌿",
+            "name": "Juniper",
+            "type": "shrub",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          },
+          {}
+        ]
+      },
+      "1-11": {
+        "subdivided": true,
+        "quadrants": [
+          {},
+          {},
+          {
+            "emoji": "🌿",
+            "name": "Juniper",
+            "type": "shrub",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          },
+          {}
+        ]
+      },
+      "1-12": {
+        "subdivided": true,
+        "quadrants": [
+          {},
+          {},
+          {
+            "emoji": "🌿",
+            "name": "Juniper",
+            "type": "shrub",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          },
+          {}
+        ]
+      },
+      "1-13": {
+        "subdivided": true,
+        "quadrants": [
+          {},
+          {},
+          {
+            "emoji": "🌿",
+            "name": "Juniper",
+            "type": "shrub",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          },
+          {}
+        ]
+      },
+      "1-14": {
+        "subdivided": true,
+        "quadrants": [
+          {},
+          {},
+          {
+            "emoji": "🌿",
+            "name": "Juniper",
+            "type": "shrub",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          },
+          {}
+        ]
+      },
+      "1-15": {
+        "subdivided": true,
+        "quadrants": [
+          {},
+          {},
+          {
+            "emoji": "🌿",
+            "name": "Juniper",
+            "type": "shrub",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          },
+          {}
+        ]
+      },
+      "1-16": {
+        "subdivided": true,
+        "quadrants": [
+          {},
+          {},
+          {
+            "emoji": "🌿",
+            "name": "Juniper",
+            "type": "shrub",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          },
+          {}
+        ]
+      },
+      "1-6": {
+        "subdivided": true,
+        "quadrants": [
+          {},
+          {},
+          {
+            "emoji": "🌿",
+            "name": "Juniper",
+            "type": "shrub",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          },
+          {}
+        ]
+      },
+      "1-19": {
+        "subdivided": true,
+        "quadrants": [
+          {},
+          {},
+          {
+            "emoji": "🌸",
+            "name": "Echinacea",
+            "type": "flower",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          },
+          {}
+        ]
+      },
+      "1-21": {
+        "subdivided": true,
+        "quadrants": [
+          {},
+          {},
+          {
+            "emoji": "🪻",
+            "name": "Lavender",
+            "type": "flower",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          },
+          {
+            "emoji": "🪻",
+            "name": "Lavender",
+            "type": "flower",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          }
+        ]
+      },
+      "1-22": {
+        "subdivided": true,
+        "quadrants": [
+          {},
+          {},
+          {
+            "emoji": "🪻",
+            "name": "Lavender",
+            "type": "flower",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          },
+          {}
+        ]
+      },
+      "7-1": {
+        "subdivided": true,
+        "quadrants": [
+          {
+            "emoji": "🌿",
+            "name": "White Meadowsweet",
+            "type": "shrub",
+            "plantDate": "2024-07-31"
+          },
+          {},
+          {},
+          {
+            "emoji": "🌿",
+            "name": "Cotoneaster",
+            "type": "shrub",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          }
+        ]
+      },
+      "8-1": {
+        "subdivided": true,
+        "quadrants": [
+          {
+            "emoji": "🌿",
+            "name": "White Meadowsweet",
+            "type": "shrub",
+            "plantDate": "2024-07-31"
+          },
+          {},
+          {},
+          {
+            "emoji": "🌿",
+            "name": "Cotoneaster",
+            "type": "shrub",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          }
+        ]
+      },
+      "9-1": {
+        "subdivided": true,
+        "quadrants": [
+          {
+            "emoji": "🌿",
+            "name": "White Meadowsweet",
+            "type": "shrub",
+            "plantDate": "2024-07-31"
+          },
+          {},
+          {},
+          {
+            "emoji": "🌿",
+            "name": "Cotoneaster",
+            "type": "shrub",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          }
+        ]
+      },
+      "10-1": {
+        "subdivided": true,
+        "quadrants": [
+          {
+            "emoji": "🌿",
+            "name": "White Meadowsweet",
+            "type": "shrub",
+            "plantDate": "2024-07-31"
+          },
+          {},
+          {},
+          {
+            "emoji": "🌿",
+            "name": "Cotoneaster",
+            "type": "shrub",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          }
+        ]
+      },
+      "11-1": {
+        "subdivided": true,
+        "quadrants": [
+          {
+            "emoji": "🌿",
+            "name": "White Meadowsweet",
+            "type": "shrub",
+            "plantDate": "2024-07-31"
+          },
+          {},
+          {},
+          {}
+        ]
+      },
+      "2-27": {
+        "subdivided": true,
+        "quadrants": [
+          {
+            "emoji": "🌳",
+            "name": "Shumard Oak",
+            "type": "tree",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          },
+          {},
+          {},
+          {}
+        ]
+      },
+      "6-33": {
+        "emoji": "🌳",
+        "name": "Shumard Oak",
+        "type": "tree",
         "notes": "",
         "plantDate": "2024-07-31"
+      },
+      "9-33": {
+        "emoji": "🌳",
+        "name": "Shumard Oak",
+        "type": "tree",
+        "notes": "",
+        "plantDate": "2024-07-31"
+      },
+      "12-33": {
+        "emoji": "🌳",
+        "name": "Shumard Oak",
+        "type": "tree",
+        "notes": "",
+        "plantDate": "2024-07-31"
+      },
+      "3-33": {
+        "emoji": "🦋",
+        "name": "Butterfly bush",
+        "type": "shrub",
+        "notes": "",
+        "plantDate": "2024-07-31"
+      },
+      "3-32": {
+        "subdivided": true,
+        "quadrants": [
+          {},
+          {},
+          {},
+          {
+            "emoji": "🌸",
+            "name": "Spiked Speedwell",
+            "type": "shrub",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          }
+        ]
+      },
+      "2-33": {
+        "subdivided": true,
+        "quadrants": [
+          {
+            "emoji": "🌾",
+            "name": "Grass",
+            "type": "grass",
+            "plantDate": "2024-07-31"
+          },
+          {},
+          {},
+          {}
+        ]
+      },
+      "3-26": {
+        "subdivided": true,
+        "quadrants": [
+          {
+            "emoji": "🌸",
+            "name": "Spiked Speedwell",
+            "type": "shrub",
+            "plantDate": "2024-07-31"
+          },
+          {},
+          {},
+          {}
+        ]
+      },
+      "3-28": {
+        "subdivided": true,
+        "quadrants": [
+          {
+            "emoji": "🌸",
+            "name": "Spiked Speedwell",
+            "type": "shrub",
+            "plantDate": "2024-07-31"
+          },
+          {},
+          {},
+          {}
+        ]
+      },
+      "3-30": {
+        "subdivided": true,
+        "quadrants": [
+          {
+            "emoji": "🌸",
+            "name": "Spiked Speedwell",
+            "type": "shrub",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          },
+          {},
+          {},
+          {}
+        ]
+      },
+      "3-27": {
+        "subdivided": true,
+        "quadrants": [
+          {},
+          {},
+          {
+            "emoji": "🦋",
+            "name": "Butterfly bush",
+            "type": "shrub",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          },
+          {}
+        ]
+      },
+      "3-29": {
+        "subdivided": true,
+        "quadrants": [
+          {},
+          {},
+          {
+            "emoji": "🦋",
+            "name": "Butterfly bush",
+            "type": "shrub",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          },
+          {}
+        ]
+      },
+      "3-31": {
+        "subdivided": true,
+        "quadrants": [
+          {},
+          {},
+          {
+            "emoji": "🦋",
+            "name": "Butterfly bush",
+            "type": "shrub",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          },
+          {}
+        ]
+      },
+      "3-5": {
+        "subdivided": true,
+        "quadrants": [
+          {},
+          {
+            "emoji": "🌱",
+            "name": "Stonecrop",
+            "type": "herb",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          },
+          {
+            "emoji": "🌱",
+            "name": "Seedling",
+            "type": "herb",
+            "notes": "",
+            "plantDate": "2024-07-31"
+          },
+          {}
+        ]
       }
     },
     "zones": {

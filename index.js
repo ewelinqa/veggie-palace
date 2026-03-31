@@ -311,15 +311,16 @@ function renderFrontYard() {
                         <div class="grid-cell zone-${zone} subdivided${selectedClass}"
                              data-cell-id="${cellId}" onclick="handleCellClick(event, '${cellId}')"
                              title="Subdivided cell (${row+1},${col+1}) - shift+click to select, click quadrant to edit">
+                            <button class="copy-btn" onclick="event.stopPropagation(); copyCellData('${cellId}')">⧉</button>
                             ${quadrants.map((q, qi) => {
                                 if (q.emoji) {
-                                    return `<div class="quadrant has-plant" onclick="event.stopPropagation(); if(event.shiftKey){toggleCellSelection('${cellId}');}else{editQuadrant('${cellId}', ${qi});}" title="${q.name || ''} - click to edit, shift+click to select">
+                                    return `<div class="quadrant has-plant" onclick="event.stopPropagation(); if(copiedCellData){handleCellClick(event,'${cellId}');}else if(event.shiftKey){toggleCellSelection('${cellId}');}else{editQuadrant('${cellId}', ${qi});}" title="${q.name || ''} - click to edit, shift+click to select">
                                         <button class="mini-edit" onclick="event.stopPropagation(); editQuadrant('${cellId}', ${qi})">✎</button>
                                         <button class="mini-delete" onclick="event.stopPropagation(); deleteQuadrant('${cellId}', ${qi})">✕</button>
                                         <span class="mini-emoji">${q.emoji}</span>
                                     </div>`;
                                 } else {
-                                    return `<div class="quadrant empty" onclick="event.stopPropagation(); if(event.shiftKey){toggleCellSelection('${cellId}');}else{placeInQuadrant('${cellId}', ${qi});}" title="Click to add plant, shift+click to select">+</div>`;
+                                    return `<div class="quadrant empty" onclick="event.stopPropagation(); if(copiedCellData){handleCellClick(event,'${cellId}');}else if(event.shiftKey){toggleCellSelection('${cellId}');}else{placeInQuadrant('${cellId}', ${qi});}" title="Click to add plant, shift+click to select">+</div>`;
                                 }
                             }).join('')}
                         </div>
@@ -406,22 +407,27 @@ function clearSelectedPlants() {
 // Copy a cell's plant data and enter paste mode
 function copyCellData(cellId) {
     const cellData = gardenData.frontYard.cells[cellId];
-    if (!cellData || cellData.subdivided) return;
-    copiedCellData = { ...cellData };
+    if (!cellData) return;
+    copiedCellData = JSON.parse(JSON.stringify(cellData));
     document.getElementById('paste-bar').style.display = 'flex';
+    document.getElementById('front-yard-grid').classList.add('paste-mode');
+    const label = copiedCellData.subdivided
+        ? `subdivided cell (${copiedCellData.quadrants.filter(q => q.emoji).length} plants)`
+        : `${copiedCellData.emoji} ${copiedCellData.name}`;
     document.getElementById('paste-info').textContent =
-        `📋 ${copiedCellData.emoji} ${copiedCellData.name} — shift+click to paste into multiple cells, click to paste once`;
+        `📋 ${label} — shift+click to paste into multiple cells, click to paste once`;
 }
 
 function cancelCopy() {
     copiedCellData = null;
     document.getElementById('paste-bar').style.display = 'none';
+    document.getElementById('front-yard-grid').classList.remove('paste-mode');
 }
 
 // Handle cell click - either paste, paint zone, or place plant
 function handleCellClick(event, cellId) {
     if (copiedCellData) {
-        gardenData.frontYard.cells[cellId] = { ...copiedCellData };
+        gardenData.frontYard.cells[cellId] = JSON.parse(JSON.stringify(copiedCellData));
         if (!event.shiftKey) cancelCopy();
         refreshFrontYard();
         return;
@@ -451,6 +457,22 @@ function handleCellClick(event, cellId) {
 function setModalMode(isQuadrant) {
     document.getElementById('divide-btn').style.display = isQuadrant ? 'none' : '';
     document.getElementById('merge-btn').style.display = isQuadrant ? '' : 'none';
+    // Repopulate emoji picker with current palette (default + custom)
+    const picker = document.getElementById('edit-emoji-picker');
+    const allPlants = [...defaultPlants, ...gardenData.customPlants];
+    picker.innerHTML = '<option value="">— pick a plant —</option>' +
+        allPlants.map((p, i) => `<option value="${i}">${p.emoji} ${p.name}</option>`).join('');
+}
+
+function applyEmojiPicker() {
+    const picker = document.getElementById('edit-emoji-picker');
+    if (!picker.value) return;
+    const allPlants = [...defaultPlants, ...gardenData.customPlants];
+    const plant = allPlants[parseInt(picker.value)];
+    document.getElementById('edit-emoji').value = plant.emoji;
+    document.getElementById('edit-name').value = plant.name;
+    document.getElementById('edit-type').value = plant.type;
+    picker.value = '';
 }
 
 // Place plant in front yard
@@ -488,6 +510,7 @@ function editFrontYardCell(cellId) {
 
 // Delete front yard cell
 function deleteFrontYardCell(cellId) {
+    if (!confirm('Do you really want to delete this plant?')) return;
     delete gardenData.frontYard.cells[cellId];
     refreshFrontYard();
 }
@@ -588,6 +611,7 @@ function mergeCell() {
 
 // Delete quadrant content
 function deleteQuadrant(cellId, quadrantIndex) {
+    if (!confirm('Do you really want to delete this plant?')) return;
     gardenData.frontYard.cells[cellId].quadrants[quadrantIndex] = {};
 
     // Check if all quadrants are empty - if so, remove the cell entirely
@@ -714,6 +738,7 @@ function closeModal() {
 
 // Delete cell
 function deleteCell(yardId, cellId) {
+    if (!confirm('Do you really want to delete this plant?')) return;
     delete gardenData[yardId].cells[cellId];
     refreshBackYard(yardId);
 }

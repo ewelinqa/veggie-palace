@@ -214,7 +214,12 @@
     <div class="modal" id="edit-modal">
         <div class="modal-content">
             <h3>🌱 Edit Plant</h3>
-            <input type="text" id="edit-emoji" placeholder="Emoji">
+            <div class="emoji-field-row">
+                <input type="text" id="edit-emoji" placeholder="Emoji">
+                <select id="edit-emoji-picker" onchange="applyEmojiPicker()">
+                    <option value="">— pick a plant —</option>
+                </select>
+            </div>
             <input type="text" id="edit-name" placeholder="Plant Name">
             <select id="edit-type">
                 <option value="flower">🌸 Flower</option>

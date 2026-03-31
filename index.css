@@ -9,6 +9,12 @@ body {
     background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
     min-height: 100vh;
     padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+body > .container {
+    width: 100%;
 }
 
 .container {
@@ -410,10 +416,29 @@ h1 {
 .unified-grid .grid-cell .delete-btn { top: -4px; right: -4px; background: #ff5252; }
 .unified-grid .grid-cell .copy-btn  { bottom: -4px; left: -4px; background: #ff9800; }
 
+.unified-grid .grid-cell.subdivided .copy-btn {
+    bottom: 1px;
+    left: 1px;
+    z-index: 10;
+}
+
 .unified-grid .grid-cell:hover .delete-btn,
 .unified-grid .grid-cell:hover .edit-btn,
 .unified-grid .grid-cell:hover .copy-btn {
     opacity: 1;
+}
+
+/* Paste mode — block all action buttons, show crosshair */
+.unified-grid.paste-mode .grid-cell {
+    cursor: crosshair;
+}
+
+.unified-grid.paste-mode .edit-btn,
+.unified-grid.paste-mode .delete-btn,
+.unified-grid.paste-mode .copy-btn,
+.unified-grid.paste-mode .mini-edit,
+.unified-grid.paste-mode .mini-delete {
+    display: none !important;
 }
 
 /* Paste mode bar */
@@ -913,6 +938,24 @@ h1 {
     width: auto;
     flex: 0;
     white-space: nowrap;
+}
+
+/* Emoji field with picker dropdown */
+.emoji-field-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.emoji-field-row input {
+    width: 70px;
+    flex-shrink: 0;
+    margin-bottom: 0;
+}
+
+.emoji-field-row select {
+    flex: 1;
+    margin-bottom: 0;
 }
 
 /* Modal date label */
